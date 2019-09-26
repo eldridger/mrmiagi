@@ -10,8 +10,23 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+interface IProps {
+  description: string
+  lang: string
+  meta: object[] // @TODO: MetaProps isn't working
+  title: string
+}
+
+interface ISite {
+  siteMetadata: {
+    title?: string
+    description?: string
+    author?: string
+  }
+}
+
+function SEO({ description, lang, meta, title }: IProps) {
+  const { site }: { site: ISite } = useStaticQuery(
     graphql`
       query {
         site {
@@ -28,6 +43,7 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
 
   return (
+    // @TODO: can't figure this error out. Seems to work anyways though.
     <Helmet
       htmlAttributes={{
         lang,
