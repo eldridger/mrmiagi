@@ -44,6 +44,7 @@ function SEO({ description, lang, meta, title }: IProps) {
 
   return (
     // @TODO: can't figure this error out. Seems to work anyways though.
+
     <Helmet
       htmlAttributes={{
         lang,
