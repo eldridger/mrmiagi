@@ -1,8 +1,36 @@
 backend:
-  name: test-repo
+  name: github
+  repo: eldridger/mrmiagi
+
 media_folder: static/assets
 public_folder: assets
 collections:
+  - name: pages
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "landing-page" }
+          - { label: "Title", name: "title", widget: string }
+          - { label: "Heading", name: "heading", widget: string }
+
+  - name: site
+    label: "Site Options"
+    files:
+      - label: "Header"
+        name: header
+        file: "_data/header.yml"
+        fields:
+          - { name: "header-title", label: "Header Title", widget: "string" }
+      - label: "Footer"
+        name: footer
+        file: "_data/footer.yml"
+        fields:
+          - { name: "footer-title", label: "Footer Title", widget: "string" }
+
+
   - name: blog
     label: Blog
     folder: blog
