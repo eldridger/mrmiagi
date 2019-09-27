@@ -59,13 +59,12 @@ const Landing = ({ data }: ILandingProps) => {
 export default Landing
 
 export const pageQuery = graphql`
-  query LandingTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "landing-page" }}) {
-      frontmatter: {
+  query LandingTemplate2 {
+    markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
+      frontmatter {
         title
         heading
-        subheading
-        description
+        intro
       }
     }
   }

@@ -8,13 +8,15 @@ collections:
   - name: pages
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: "src/content/index.md"
         label: "Landing Page"
         name: "index"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "landing-page" }
+          - { label: "Template Key", name: "template-key", widget: "hidden", default: "landing-page" }
           - { label: "Title", name: "title", widget: string }
           - { label: "Heading", name: "heading", widget: string }
+          - { label: Intro text, name: intro, widget: text }
+
 
   - name: site
     label: "Site Options"
