@@ -1,6 +1,6 @@
 ---
 title: Title
 heading: Heading
-intro: Welcome to my website
+intro: Welcome to my website!
 ---
 
